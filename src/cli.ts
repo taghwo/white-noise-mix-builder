@@ -223,8 +223,15 @@ function cmdPresets(): void {
   console.log(`Saved presets (${presets.length}):\n`);
   for (const p of presets) {
     const ids = p.layers.map((l: Layer) => l.soundId).join(", ");
-    console.log(`  ${p.name.padEnd(18)} ${p.layers.length} layers — ${ids}`);
+    const slug = slugify(p.name);
+    // Show the friendly name only when it differs from the id you'd type.
+    const nameNote = slug === p.name ? "" : `"${p.name}"  `;
+    console.log(`  ${slug.padEnd(20)} ${nameNote}${p.layers.length} layers — ${ids}`);
   }
+  console.log(
+    "\nUse the id (first column) with play/export/load/rm, " +
+      "e.g. `wnm export pin-30-white-60`.",
+  );
 }
 
 function cmdExport(argv: string[]): void {
