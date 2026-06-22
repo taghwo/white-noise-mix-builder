@@ -1,0 +1,64 @@
+{
+  "name": "white-noise-mix-builder",
+  "version": "0.1.0",
+  "description": "Build custom white-noise mixes from a library of environmental sounds, with live volume sliders in your terminal.",
+  "type": "module",
+  "bin": {
+    "wnm": "./dist/cli.js"
+  },
+  "main": "./dist/cli.js",
+  "files": [
+    "dist",
+    "assets/sounds/manifest.json",
+    "assets/sounds/*-noise.wav"
+  ],
+  "scripts": {
+    "dev": "tsx src/cli.ts",
+    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\"",
+    "build": "npm run clean && tsc -p tsconfig.json",
+    "gen-sounds": "node scripts/gen-noise.mjs",
+    "prepare": "npm run build && npm run gen-sounds",
+    "setup": "npm run prepare && npm link",
+    "unlink": "npm unlink -g white-noise-mix-builder",
+    "start": "node dist/cli.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": [
+    "white-noise",
+    "ambient",
+    "focus",
+    "sleep",
+    "cli",
+    "ink",
+    "tui",
+    "sound"
+  ],
+  "author": "Oghenekevwe Taghwo <oghenekevwetaghwo@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/taghwo/white-noise-mix-builder#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taghwo/white-noise-mix-builder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/taghwo/white-noise-mix-builder/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "ink": "^5.0.1",
+    "react": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/react": "^18.3.3",
+    "ink-testing-library": "^4.0.0",
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  }
+}

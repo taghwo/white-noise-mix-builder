@@ -1,0 +1,28 @@
+{
+  "sounds": [
+    {
+      "id": "white-noise",
+      "label": "White Noise",
+      "file": "white-noise.wav",
+      "icon": "🌫️",
+      "license": "CC0",
+      "attribution": "Synthesized by white-noise-mix-builder"
+    },
+    {
+      "id": "pink-noise",
+      "label": "Pink Noise",
+      "file": "pink-noise.wav",
+      "icon": "🎀",
+      "license": "CC0",
+      "attribution": "Synthesized by white-noise-mix-builder"
+    },
+    {
+      "id": "brown-noise",
+      "label": "Brown Noise",
+      "file": "brown-noise.wav",
+      "icon": "🟤",
+      "license": "CC0",
+      "attribution": "Synthesized by white-noise-mix-builder"
+    }
+  ]
+}
