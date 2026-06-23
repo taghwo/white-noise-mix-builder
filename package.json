@@ -1,6 +1,6 @@
 {
   "name": "white-noise-mix-builder",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Build custom white-noise mixes from a library of environmental sounds, with live volume sliders in your terminal.",
   "type": "module",
   "bin": {

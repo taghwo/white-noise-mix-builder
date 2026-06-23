@@ -4,8 +4,7 @@ Build custom white-noise mixes from a library of environmental sounds, with
 live volume sliders right in your terminal. Layer rain over a cafe over brown
 noise, dial in each level, save the combo, and play it back any time.
 
-> **Status:** all core features are working — interactive mixer, multi-layer
-> playback, presets (save/load), and WAV export. See the [roadmap](#roadmap).
+![white-noise-mix-builder demo](assets/demo.gif)
 
 ## Why
 
@@ -179,15 +178,6 @@ Everything personal lives under one folder (`~/.white-noise-mix` by default, or
 Presets are plain JSON, so they're easy to inspect, edit, back up, or share —
 each one just lists the sounds and their volumes.
 
-## Roadmap
-
-1. ✅ Scaffold + sound library + `list`
-2. ✅ Audio backend (ffplay → sox → afplay → silent fallback) + `play`
-3. ✅ Multi-layer mixer with independent volume + `mix`
-4. ✅ Interactive Ink UI with sliders
-5. ✅ Save / load / `play <preset>`
-6. ✅ Export a mix to a single WAV (pure Node, no ffmpeg needed)
-7. Polish: more sounds, docs, CI
 
 ## Tech
 
